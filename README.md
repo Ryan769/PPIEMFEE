@@ -1,31 +1,10 @@
-# R-BERT
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/enriching-pre-trained-language-model-with/relation-extraction-on-semeval-2010-task-8)](https://paperswithcode.com/sota/relation-extraction-on-semeval-2010-task-8?p=enriching-pre-trained-language-model-with)
-
-(Unofficial) Pytorch implementation of `R-BERT`: [Enriching Pre-trained Language Model with Entity Information for Relation Classification](https://arxiv.org/abs/1905.08284)
+# Protein-Protein Interaction Extraction based on Multi-feature Fusion and Entity Enhancement
 
 ## Model Architecture
 
 <p float="left" align="center">
     <img width="600" src="https://user-images.githubusercontent.com/28896432/68673458-1b090d00-0597-11ea-96b1-7c1453e6edbb.png" />  
 </p>
-
-### **Method**
-
-1. **Get three vectors from BERT.**
-   - [CLS] token vector
-   - averaged entity_1 vector
-   - averaged entity_2 vector
-2. **Pass each vector to the fully-connected layers.**
-   - dropout -> tanh -> fc-layer
-3. **Concatenate three vectors.**
-4. **Pass the concatenated vector to fully-connect layer.**
-   - dropout -> fc-layer
-
-- **_Exactly the SAME conditions_** as written in paper.
-  - **Averaging** on `entity_1` and `entity_2` hidden state vectors, respectively. (including \$, # tokens)
-  - **Dropout** and **Tanh** before Fully-connected layer.
-  - **No [SEP] token** at the end of sequence. (If you want add [SEP] token, give `--add_sep_token` option)
 
 ## Dependencies
 
